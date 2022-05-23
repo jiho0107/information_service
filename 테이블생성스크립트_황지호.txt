@@ -1,0 +1,43 @@
+create table 학생 {
+	학번 varchar(10) not null,
+	이름 varchar(20) not null,
+	비밀번호 varchar(20) not null,
+	연락처 varchar(10) ,
+	생년월일 date,
+	만나이 int,
+	primary key(학번),
+	check(만나이 >= 0)
+};
+
+
+create table 과목{
+	과목번호 varchar(10) not null,
+	과목명 varchar(20) not null,
+	교수이름 varchar(20) not null,
+	primary key(과목번호)
+};
+
+
+create table 교수{
+	교수번호 varchar(10) not null,
+	교수이름 varchar(20) not null,
+	연락처 varchar(10),
+	primary key(교수번호)
+};
+
+
+create table 휴복학신청{
+	접수번호 varchar(10) not null,
+	접수일 date not null,
+	처리구분 varchar(5) not null,
+	primary key(접수번호)
+};
+
+
+create table 학기{
+	년도 int not null,
+	학기구분 int not null,
+	학년 int not null,
+	등록금 int,
+	primary key(년도, 학기구분)
+};
